@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiiish Pilot — walkthrough</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-raised: #161b22;
+    --border: #2a313c;
+    --text: #e6edf3;
+    --text-dim: #9aa5b1;
+    --accent: #5fc9f8;
+    --accent-dim: #2f7fa3;
+    --warn-bg: #2b1f10;
+    --warn-border: #6b4a18;
+    --warn-text: #f3c878;
+    --ok-bg: #10261c;
+    --ok-border: #1e5c3c;
+    --code-bg: #0a0e14;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+  }
+  header {
+    margin-bottom: 2rem;
+  }
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .logo-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+    flex-shrink: 0;
+  }
+  h1 {
+    font-size: 1.9rem;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .tagline {
+    color: var(--text-dim);
+    font-size: 1.02rem;
+    margin-top: 0.5rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin: 2.4rem 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 1.02rem;
+    margin: 1.4rem 0 0.5rem;
+    color: var(--accent);
+  }
+  p { margin: 0.7rem 0; }
+  ul, ol { padding-left: 1.3rem; }
+  li { margin: 0.45rem 0; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
+  a:hover { border-bottom-color: var(--accent); }
+  code {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.9em;
+    font-family: "SF Mono", Consolas, "Courier New", monospace;
+  }
+  kbd {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-bottom-width: 2px;
+    border-radius: 5px;
+    padding: 0.15rem 0.5rem;
+    font-family: "SF Mono", Consolas, "Courier New", monospace;
+    font-size: 0.88em;
+    font-weight: 600;
+  }
+  .card {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .safety-card {
+    background: var(--ok-bg);
+    border: 1px solid var(--ok-border);
+    border-radius: 10px;
+    padding: 1rem 1.3rem;
+    margin: 1.1rem 0;
+    font-size: 0.96rem;
+  }
+  .warn-card {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 10px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+  .warn-card strong { color: var(--warn-text); }
+  .download-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #06222f;
+    font-weight: 700;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    font-size: 0.98rem;
+  }
+  .btn:hover { background: #7fd4fb; border-bottom: none; }
+  .btn.secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    font-weight: 500;
+  }
+  .btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+  .faq-q {
+    font-weight: 600;
+    margin-top: 1.1rem;
+  }
+  .faq-a {
+    color: var(--text-dim);
+    margin-top: 0.25rem;
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 0.88rem;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #0d1117;
+      --bg-raised: #161b22;
+      --text: #e6edf3;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-row">
+    <span class="logo-dot"></span>
+    <h1>Fiiish Pilot</h1>
+  </div>
+  <p class="tagline">A free, ban-safe on-screen minimap and navigation overlay for Escape from Tarkov.</p>
+</header>
+
+<p>Fiiish Pilot shows your live position, extract and quest directions, and your squad's positions right on top of the game, updating every time you take a screenshot. It's built for friends playing Tarkov together and sharing one map.</p>
+
+<div class="safety-card">
+  <strong>Ban-safe by design.</strong> Fiiish Pilot never reads game memory, never injects into the game process, and never sends input to the game. It only watches the Screenshots folder Tarkov itself writes to and reads Tarkov's own log files — the same passive technique tools like TarkovMonitor have used for years. Your dot only moves when <em>you</em> press your screenshot key.
+</div>
+
+<h2>Download</h2>
+
+<div class="download-row">
+  <a class="btn" href="https://github.com/BlueFiiish/fiiish-pilot/releases/latest/download/Fiiish.Pilot-Setup-0.1.0.exe">Download Setup.exe</a>
+  <a class="btn secondary" href="https://github.com/BlueFiiish/fiiish-pilot/releases/latest">All releases / Portable version</a>
+</div>
+
+<p><strong>Setup.exe</strong> is a normal one-click installer — installs for your user only, no admin needed, adds a Start Menu shortcut. That's what almost everyone wants. The <strong>Portable</strong> exe on the releases page needs no install at all if you'd rather run it from a folder or USB stick.</p>
+
+<h2>Install</h2>
+
+<ol>
+  <li>Run the downloaded exe.</li>
+  <li>
+    Windows will show a blue <strong>"Windows protected your PC"</strong> SmartScreen screen. This happens because the app isn't signed with a paid code-signing certificate — it does <strong>not</strong> mean anything is wrong. Click <strong>More info</strong>, then click <strong>Run anyway</strong>.
+  </li>
+  <li>The app launches into your system tray (bottom-right of the taskbar, near the clock) and opens a <strong>first-run setup wizard</strong>.</li>
+</ol>
+
+<div class="warn-card">
+  <strong>Don't see the wizard or the SmartScreen prompt?</strong> Check the hidden-icons arrow in your taskbar tray — the app runs quietly in the background once it's set up.
+</div>
+
+<h2>The setup wizard</h2>
+
+<p>The wizard does the annoying parts for you and only asks you to confirm or choose:</p>
+
+<ul>
+  <li><strong>Auto-detect.</strong> It finds your Tarkov Screenshots folder and Logs folder on its own (common if OneDrive redirects your Documents folder, it'll catch that too) and tells you if something looks wrong.</li>
+  <li><strong>Your keys.</strong> Every hotkey in the app is yours to set — click a key in the wizard and press whatever you actually want to use. It warns you live if two actions clash, if something else on your PC already grabbed that key, or if Tarkov itself needs it.</li>
+  <li><strong>Live screenshot test.</strong> Take a screenshot in-game with the key you just set, and this step turns green the instant the wizard sees it — confirming the whole pipeline works before you ever load into a raid.</li>
+  <li><strong>Squad</strong> (optional, see below).</li>
+</ul>
+
+<p>You can reopen the wizard any time from the tray icon if you want to change anything later.</p>
+
+<h2>Two settings inside Tarkov</h2>
+
+<div class="card">
+  <p><span class="step-num">1</span><strong>Settings → Game → Screen mode: Borderless.</strong> The overlay can't draw on top of exclusive fullscreen. Borderless has no real performance cost on a modern PC.</p>
+  <p><span class="step-num">2</span><strong>Settings → Controls → Screenshot:</strong> bind it to the same key you told the wizard. They have to match — the app just watches for the file Tarkov creates when you press that key.</p>
+</div>
+
+<h2>Playing with friends (squad mode)</h2>
+
+<ol>
+  <li>Get the join code from Josia in Discord.</li>
+  <li>In the game, press <kbd>F8</kbd> to open interact mode.</li>
+  <li>Open the <strong>squad</strong> section, type a display name, and enter the code under <strong>join</strong>.</li>
+</ol>
+
+<p>Your own position only goes to your squad's room — nothing is public, nothing is logged, and a teammate's dot disappears rather than going stale the moment they disconnect.</p>
+
+<h2>Troubleshooting</h2>
+
+<p class="faq-q">A key does nothing (F8, F6, etc.)</p>
+<p class="faq-a">Something else on your PC grabbed that key globally — Discord, GeForce Experience, the Steam overlay and other overlay tools all do this. The app will tell you: a red banner appears top-left naming the key and what it broke. Fix it from the tray icon's <strong>Setup wizard → Your keys</strong> step, which marks the conflicting key <strong>TAKEN</strong> — either close whatever owns it, or pick a different key right there.</p>
+
+<p class="faq-q">My dot on the map isn't moving</p>
+<p class="faq-a">Press <strong>your</strong> screenshot key in-game (not necessarily F10 — whatever you set in the wizard) and confirm Escape from Tarkov's screen mode is set to <strong>Borderless</strong>, not Fullscreen. The dot updates on every screenshot you take, nothing else.</p>
+
+<p class="faq-q">Still stuck?</p>
+<p class="faq-a">Ask whoever sent you this link — probably Josia in Discord.</p>
+
+<footer>
+  Fiiish Pilot is a free fan-made tool, not affiliated with Battlestate Games. <a href="https://github.com/BlueFiiish/fiiish-pilot">Source &amp; releases on GitHub</a>.
+</footer>
+
+</body>
+</html>
