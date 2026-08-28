@@ -234,6 +234,10 @@
 
 <p>You can reopen the wizard any time from the tray icon if you want to change anything later.</p>
 
+<div class="warn-card">
+  <strong>The overlay's keys only work while Tarkov is running.</strong> A global shortcut is taken from <em>every</em> program on your PC, so an overlay holding F7 all day would eat that key in every other game you play. Fiiish Pilot watches for Tarkov, arms its keys when the game starts, and releases them when you close it. Change it under <strong>tray icon &rarr; Hotkeys</strong>.
+</div>
+
 <h2>Two settings inside Tarkov</h2>
 
 <div class="card">
@@ -253,7 +257,10 @@
 
 <h2>Troubleshooting</h2>
 
-<p class="faq-q">A key does nothing (F8, F6, etc.)</p>
+<p class="faq-q">The keys do nothing when Tarkov isn't running</p>
+<p class="faq-a">That's on purpose. The overlay only arms its shortcuts while Tarkov is open, so it never steals a key from your other games. Use the <strong>tray icon</strong> to hide/show the overlay in the meantime — or set <strong>tray &rarr; Hotkeys &rarr; Always on</strong> if you'd rather have them all the time. The minimap's status line and the tray tooltip both say when the keys are suspended.</p>
+
+<p class="faq-q">A key does nothing while Tarkov IS running</p>
 <p class="faq-a">Something else on your PC grabbed that key globally — Discord, GeForce Experience, the Steam overlay and other overlay tools all do this. The app will tell you: a red banner appears top-left naming the key and what it broke. Fix it from the tray icon's <strong>Setup wizard → Your keys</strong> step, which marks the conflicting key <strong>TAKEN</strong> — either close whatever owns it, or pick a different key right there.</p>
 
 <p class="faq-q">My dot on the map isn't moving</p>

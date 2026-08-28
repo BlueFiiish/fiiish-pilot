@@ -31,6 +31,8 @@ That's it. In a raid, tap your screenshot key whenever you want your dot on the 
 - **F9** — quest arrows (direction + distance to your active quest objectives — no TarkovTracker account needed, it reads the log Tarkov already writes).
 - **Ctrl+F8** — cycle minimap size. **Ctrl+F9** — cycle opacity. **Ctrl+F6** — toggle the minimap panel.
 
+**These keys only work while Tarkov is running.** That's deliberate: a global shortcut is taken from *every* program on your PC, so an overlay that held F7 all day would eat that key in every other game you play. The app watches for Tarkov and arms the keys when it starts, then releases them when you close it. You can change this under **tray icon → Hotkeys** (*Only while Tarkov is running* / *Always on* / *Off*).
+
 **Don't like those keys?** The setup wizard has a **Your keys** step where you click a key and press whatever you want instead — it warns you if two actions clash, if a key is already taken by another app, or if you pick something Tarkov itself needs. Reopen it any time from the tray icon. New keys apply immediately, no restart.
 
 Everything else is configurable from interact mode's filter panel (appearance, what's shown per-map) or the tray icon.
@@ -52,6 +54,7 @@ The server this uses is already set up and filled in for you — there's nothing
 
 - **Wrong folder detected for screenshots/logs** — tray icon → **Setup wizard**, or Browse to the right one by hand. Common if OneDrive redirects your Documents folder.
 - **Position not updating** — make sure the key you press in-game is the same one shown as your screenshot key in the setup wizard. The wizard's **Live test** step confirms it end-to-end: it goes green the moment it reads a screenshot you just took.
-- **A key does nothing (F8, F6, ...)** — something else on your PC has grabbed it globally. Discord, GeForce Experience, the Steam overlay and other map tools all do this. **The app tells you:** a red banner appears top-left naming the key and the action it broke, the tray tooltip says how many keys are blocked, and the wizard's **Your keys** step marks it `TAKEN` in red. Either close whatever owns it, or record a different key right there.
+- **The keys do nothing when Tarkov isn't running** — that's on purpose, not a bug. The overlay only arms its shortcuts while Tarkov is open so it never steals a key from your other games. Use the **tray icon** to hide/show the overlay in the meantime, or set **tray → Hotkeys → Always on** if you'd rather have them all the time.
+- **A key does nothing while Tarkov IS running** — something else on your PC has grabbed it globally. Discord, GeForce Experience, the Steam overlay and other map tools all do this. **The app tells you:** a red banner appears top-left naming the key and the action it broke, the tray tooltip says how many keys are blocked, and the wizard's **Your keys** step marks it `TAKEN` in red. Either close whatever owns it, or record a different key right there.
 - **Maps look blank / no extract or quest markers** — the app refreshes its map data from tarkov.dev on its own when it's more than two weeks old. Give it a minute on a working internet connection, then restart it.
 - Anything else — ask whoever gave you this app.
