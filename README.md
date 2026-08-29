@@ -7,12 +7,35 @@ A ban-safe on-screen minimap and navigation overlay for **Escape from Tarkov** �
 ## Install
 
 1. Download the latest release from the [Releases page](../../releases/latest). You want one of:
-   - **`Fiiish Pilot-Setup-<version>.exe`** — a normal one-click installer (installs for your user only, adds a Start Menu shortcut, no admin needed). **Recommended** if you just want it set up and forget about it.
-   - **`Fiiish Pilot-Portable-<version>.exe`** — a single exe, no install, just run it from wherever you put it. Good if you want to keep it on a USB stick or don't want anything written to Program Files.
+   - **`Fiiish-Pilot-Setup-<version>.exe`** — a normal one-click installer (installs for your user only, adds a Start Menu shortcut, no admin needed). **Recommended** — it's the only version that updates itself.
+   - **`Fiiish-Pilot-Portable-<version>.exe`** — a single exe, no install, just run it from wherever you put it. Good if you want to keep it on a USB stick or don't want anything written to Program Files. It can't auto-update (see below).
 2. Run the exe. **Windows will show a SmartScreen warning** ("Windows protected your PC") because this isn't signed with a paid code-signing certificate. That's expected for a small free tool, not a sign of malware:
    - Click **More info**
    - Click **Run anyway**
 3. The app starts with a tray icon (bottom-right of your taskbar) and a **first-run setup wizard** that walks you through everything below automatically — it autodetects your Screenshots and Tarkov Logs folders and tells you if something's wrong. You can mostly just click through it.
+
+## Updates
+
+From v0.1.3 onwards, **the Setup (installer) version updates itself.** You do
+not have to do anything:
+
+- It checks GitHub for a new release ~30 seconds after launch, then every 4
+  hours, and downloads a new version quietly in the background.
+- **It will never interrupt you.** There is no popup, ever. If Tarkov is
+  running when an update finishes downloading, the app says nothing at all
+  until you close the game.
+- Once you are out of the game, the tray menu grows a **"Restart to update
+  (vX.Y.Z)"** line. Click it whenever you feel like it.
+- If you never click it, the update installs on its own the next time you
+  close Fiiish Pilot normally. Either way you end up on the new version.
+- No internet, or GitHub is down? Nothing happens and nothing complains. The
+  app works fully offline.
+
+**The Portable version cannot update itself** - it is a single exe with no
+installer, so there is nothing to hand a new build to. It still notices when a
+newer release exists and shows a tray line ("Update vX.Y.Z available -
+download from GitHub"); click it to open the Releases page and grab the new
+exe by hand.
 
 ## In-game setup (2 settings)
 
