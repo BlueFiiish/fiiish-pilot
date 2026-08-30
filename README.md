@@ -1,6 +1,9 @@
 # Fiiish Pilot
 
-A ban-safe on-screen minimap and navigation overlay for **Escape from Tarkov** — live position, extract/quest arrows, and optional squad mode (see your friends' positions).
+A ban-safe game companion app. As of **v0.2.0 it's multi-game**: pick your game on the home screen.
+
+- **Escape from Tarkov** — on-screen minimap and navigation overlay: live position, extract/quest arrows, an interactive map browser, and optional squad mode (see your friends' positions).
+- **The Binding of Isaac** — a live floor map read from the game's own log: the whole layout including secret rooms, item room, shop and boss, on a second monitor, your phone, or an OBS overlay. One-click mod install under the Isaac **Setup** tab (heads-up: like any Isaac mod, unlocks need Mom beaten once with mods off on that save).
 
 **Why it's ban-safe:** this app never reads game memory, never injects anything, and never sends input to the game. It only watches the Screenshots folder Tarkov itself writes to (your position/heading are encoded in the screenshot filename) and tails Tarkov's own log files for the current map and quest events. The same passive technique TarkovMonitor / Tarkov Market Pilot / TarkovQuestie have used for years. Your position only updates when **you** press your screenshot key — there is no continuous tracking.
 
